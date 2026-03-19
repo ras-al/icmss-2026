@@ -7,9 +7,9 @@ import ieeeGlobalLogo from '../assets/images/IEEE_logo.svg.png';
 
 export default function Footer() {
     return (
-        <footer className="relative border-t border-[var(--color-border)] bg-[rgba(10,14,39,0.8)]">
-            {/* Top gradient line */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent" />
+        <footer className="relative border-t" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-footer-bg)' }}>
+            {/* Top accent line */}
+            <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'var(--color-footer-top-line)' }} />
 
             <div className="container mx-auto px-4 sm:px-6 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -19,28 +19,27 @@ export default function Footer() {
                             <a href="https://tkmce.ac.in/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-105">
                                 <img src={tkmLogo} alt="TKM College of Engineering" className="object-contain" style={{ height: '45px', width: 'auto', maxWidth: '100%' }} />
                             </a>
-                            <div className="w-px bg-white/20 shrink-0" style={{ height: '32px' }}></div>
+                            <div className="w-px shrink-0" style={{ height: '32px', backgroundColor: 'var(--color-logo-separator)' }}></div>
                             <a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-105">
                                 <img src={ieeeGlobalLogo} alt="IEEE" className="object-contain" style={{ height: '36px', width: 'auto', maxWidth: '100%' }} />
                             </a>
-                            <div className="w-px bg-white/20 shrink-0" style={{ height: '32px' }}></div>
+                            <div className="w-px shrink-0" style={{ height: '32px', backgroundColor: 'var(--color-logo-separator)' }}></div>
                             <a href="https://www.ieeesbtkmce.in/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-105">
                                 <img src={ieeeTkmLogo} alt="IEEE TKM SB" className="object-contain" style={{ height: '100px', width: 'auto', maxWidth: '100%' }} />
                             </a>
                         </div>
-                        <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
+                        <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
                             4th International Conference on Communication, Microelectronics, Signal Processing &amp; Systems
                         </p>
                     </div>
 
                     {/* Quick links */}
                     <div>
-                        <h4 className="text-sm font-semibold text-[var(--color-text-primary)] uppercase tracking-wider mb-4">Quick Links</h4>
-                        <br></br>
+                        <h4 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--color-text-heading)' }}>Quick Links</h4>
                         <ul className="space-y-2">
                             {navLinks.map((link) => (
                                 <li key={link.path}>
-                                    <Link to={link.path} className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors duration-200">
+                                    <Link to={link.path} className="text-sm hover:text-[var(--color-accent)] transition-colors duration-200" style={{ color: 'var(--color-text-muted)' }}>
                                         {link.label}
                                     </Link>
                                 </li>
@@ -50,9 +49,8 @@ export default function Footer() {
 
                     {/* Contact */}
                     <div>
-                        <h4 className="text-sm font-semibold text-[var(--color-text-primary)] uppercase tracking-wider mb-4">Contact</h4>
-                        <br></br>
-                        <ul className="space-y-3 text-sm text-[var(--color-text-muted)]">
+                        <h4 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--color-text-heading)' }}>Contact</h4>
+                        <ul className="space-y-3 text-sm" style={{ color: 'var(--color-text-muted)' }}>
                             <li className="flex items-start gap-2">
                                 <MapPin size={16} className="mt-0.5 text-[var(--color-accent)] shrink-0" />
                                 <span>TKM College of Engineering, Kollam, Kerala, India</span>
@@ -66,16 +64,15 @@ export default function Footer() {
 
                     {/* IEEE */}
                     <div>
-                        <h4 className="text-sm font-semibold text-[var(--color-text-primary)] uppercase tracking-wider mb-4">Publication</h4>
-                        <br></br>
-                        <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
-                            Accepted and presented papers will be submitted to <span className="text-[var(--color-accent)]">IEEE Xplore</span> Digital Library.
+                        <h4 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--color-text-heading)' }}>Publication</h4>
+                        <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+                            Accepted and presented papers will be submitted to <span className="text-[var(--color-accent)] font-semibold">IEEE Xplore</span> Digital Library.
                         </p>
                     </div>
                 </div>
 
                 {/* Bottom bar */}
-                <div className="mt-12 pt-8 border-t border-[var(--color-border)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--color-text-muted)]">
+                <div className="mt-12 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style={{ borderColor: 'var(--color-border)', color: 'var(--color-text-muted)' }}>
                     <p>&copy; 2026 ICMSS. All rights reserved.</p>
                     <p>Organized by TKM College of Engineering, Kollam</p>
                 </div>

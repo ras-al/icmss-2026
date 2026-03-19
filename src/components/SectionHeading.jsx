@@ -22,17 +22,17 @@ export default function SectionHeading({ title, subtitle, light = false }) {
     >
       <h2
         className={`text-3xl sm:text-4xl md:text-5xl font-bold font-[var(--font-heading)] mb-6 leading-tight ${
-          light ? 'text-[var(--color-text-primary)]' : 'gradient-text'
+          light ? 'text-[var(--color-text-heading)]' : 'gradient-text'
         }`}
       >
         {title}
       </h2>
 
-      {/* Gradient underline */}
-      <div className="mx-auto w-24 h-1 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-2)] mb-6" />
+      {/* Underline */}
+      <div className="mx-auto w-24 h-1 rounded-full bg-[var(--color-accent)] mb-6" />
 
       {subtitle && (
-        <p className="text-[var(--color-text-secondary)] max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+        <p className="text-[var(--color-text-body)] max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
           {subtitle}
         </p>
       )}

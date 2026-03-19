@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -18,7 +19,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <>
+    <ThemeProvider>
       <ScrollToTop />
       <Navbar />
       <main className="min-h-screen">
@@ -32,7 +33,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </ThemeProvider>
   )
 }
 

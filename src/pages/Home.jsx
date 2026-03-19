@@ -55,7 +55,7 @@ function Countdown() {
             {blocks.map((b) => (
                 <div key={b.label} className="glass-card px-4 py-3 sm:px-6 sm:py-4 text-center min-w-[70px]">
                     <div className="text-2xl sm:text-3xl font-bold gradient-text tabular-nums">{String(b.value).padStart(2, '0')}</div>
-                    <div className="text-[10px] sm:text-xs text-[var(--color-text-muted)] uppercase tracking-wider mt-1">{b.label}</div>
+                    <div className="text-[10px] sm:text-xs uppercase tracking-wider mt-1" style={{ color: 'var(--color-text-muted)' }}>{b.label}</div>
                 </div>
             ))}
         </div>
@@ -66,40 +66,33 @@ export default function Home() {
     return (
         <div>
             {/* ═══ Hero ═══ */}
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                {/* BG layers */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)] via-[#0d1235] to-[var(--color-primary)]" />
-                <div className="absolute inset-0 opacity-30"
-                    style={{
-                        background: 'radial-gradient(ellipse 80% 50% at 50% 20%, rgba(0,212,255,0.15), transparent), radial-gradient(ellipse 60% 40% at 80% 60%, rgba(124,58,237,0.12), transparent)',
-                    }}
-                />
+            <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: 'var(--color-bg-hero)' }}>
                 <ParticleBackground />
 
                 <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto" style={{ animation: 'fade-in-up 1s ease' }}>
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs sm:text-sm text-[var(--color-accent)] mb-8">
-                        <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse" />
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8 glass" style={{ color: 'var(--color-accent)' }}>
+                        <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: 'var(--color-accent)' }} />
                         {conferenceInfo.edition} Edition — IEEE Conference
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-[var(--font-heading)] leading-tight mb-6">
                         <span className="gradient-text">ICMSS</span>{' '}
-                        <span className="text-[var(--color-text-primary)]">2026</span>
+                        <span style={{ color: 'var(--color-text-heading)' }}>2026</span>
                     </h1>
 
-                    <p className="text-base sm:text-lg md:text-x2 text-[var(--color-text-secondary)] max-w-3xl mx-auto mb-6 leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-x2 max-w-3xl mx-auto mb-6 leading-relaxed" style={{ color: 'var(--color-text-body)' }}>
                         {conferenceInfo.fullName}
                     </p>
 
-                    <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-base sm:text-lg lg:text-x2 font-medium text-[var(--color-text-primary)] mb-12 tracking-wide">
+                    <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-base sm:text-lg font-medium mb-12" style={{ color: 'var(--color-text-body)' }}>
                         <span className="flex items-center gap-2.5">
-                            <MapPin size={24} strokeWidth={2.5} className="text-[var(--color-accent)] drop-shadow-[0_0_12px_rgba(0,212,255,0.6)]" />
+                            <MapPin size={24} className="text-[var(--color-accent)]" />
                             {conferenceInfo.venue}
                         </span>
-                        <span className="hidden sm:inline text-[var(--color-border)] opacity-50">|</span>
+                        <span className="hidden sm:inline" style={{ color: 'var(--color-text-muted)' }}>|</span>
                         <span className="flex items-center gap-2.5">
-                            <Calendar size={24} strokeWidth={2.5} className="text-[var(--color-accent-2)] drop-shadow-[0_0_12px_rgba(124,58,237,0.6)]" />
+                            <Calendar size={24} className="text-[var(--color-accent)]" />
                             {conferenceInfo.dates}
                         </span>
                     </div>
@@ -121,19 +114,19 @@ export default function Home() {
                 </div>
 
                 {/* Scroll indicator */}
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-[var(--color-text-muted)]">
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" style={{ color: 'var(--color-text-muted)' }}>
                     <ChevronDown size={28} />
                 </div>
             </section>
 
             {/* ═══ About Conference ═══ */}
-            <section className="section-padding bg-[var(--color-primary)]">
+            <section className="section-padding" style={{ backgroundColor: 'var(--color-bg)' }}>
                 <div className="container mx-auto">
                     <SectionHeading title="About the Conference" subtitle="Since 2014, ICMSS has been a vibrant platform for cutting-edge research" />
 
                     <ScrollReveal>
                         <div className="max-w-4xl mx-auto glass-card p-8 sm:p-12">
-                            <div className="text-[var(--color-text-secondary)] leading-relaxed space-y-5 text-base sm:text-lg text-justify">
+                            <div className="leading-relaxed space-y-5 text-base sm:text-lg text-justify" style={{ color: 'var(--color-text-body)' }}>
                                 {aboutConference.split('\n\n').map((para, i) => (
                                     <p key={i}>{para}</p>
                                 ))}
@@ -149,7 +142,7 @@ export default function Home() {
                                     <div className="text-3xl sm:text-4xl font-bold gradient-text mb-2">
                                         <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                                     </div>
-                                    <div className="text-sm text-[var(--color-text-muted)]">{stat.label}</div>
+                                    <div className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{stat.label}</div>
                                 </div>
                             </ScrollReveal>
                         ))}
@@ -158,25 +151,25 @@ export default function Home() {
             </section>
 
             {/* ═══ About TKM ═══ */}
-            <section className="section-padding" style={{ background: 'linear-gradient(180deg, var(--color-primary) 0%, #0d1235 100%)' }}>
+            <section className="section-padding" style={{ backgroundColor: 'var(--color-bg-alt)' }}>
                 <div className="container mx-auto">
                     <SectionHeading title="About TKM College of Engineering" subtitle="Established 1958 · Kollam, Kerala" />
                     <ScrollReveal>
                         <div className="max-w-4xl mx-auto glass-card p-8 sm:p-12">
-                            <p className="text-[var(--color-text-secondary)] leading-relaxed text-base sm:text-lg text-justify">{aboutTKM}</p>
+                            <p className="leading-relaxed text-base sm:text-lg text-justify" style={{ color: 'var(--color-text-body)' }}>{aboutTKM}</p>
                         </div>
                     </ScrollReveal>
                 </div>
             </section>
 
             {/* ═══ Important Dates / Timeline ═══ */}
-            <section className="section-padding bg-[var(--color-primary)]">
+            <section className="section-padding" style={{ backgroundColor: 'var(--color-bg)' }}>
                 <div className="container mx-auto">
                     <SectionHeading title="Important Dates" subtitle="Mark your calendar for these key milestones" />
 
                     <div className="max-w-2xl mx-auto relative">
                         {/* Vertical line */}
-                        <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--color-accent)] via-[var(--color-accent-2)] to-transparent" />
+                        <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-px" style={{ background: `linear-gradient(to bottom, var(--color-accent), var(--color-border-accent), transparent)` }} />
 
                         {schedule.map((item, i) => {
                             const Icon = iconMap[item.icon] || Calendar;
@@ -184,17 +177,21 @@ export default function Home() {
                                 <ScrollReveal key={i} delay={i * 120}>
                                     <div className="relative flex gap-5 sm:gap-6 mb-8 sm:mb-10 group">
                                         {/* Dot */}
-                                        <div className={`relative z-10 shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${item.status === 'active'
-                                            ? 'bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-2)] shadow-[0_0_20px_rgba(0,212,255,0.3)]'
-                                            : 'glass'
-                                            }`}>
+                                        <div
+                                            className={`relative z-10 shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110`}
+                                            style={{
+                                                background: item.status === 'active' ? 'var(--color-accent)' : 'var(--color-bg-accent-subtle)',
+                                                border: item.status === 'active' ? 'none' : '1px solid var(--color-border-accent)',
+                                                boxShadow: item.status === 'active' ? '0 4px 15px var(--color-btn-primary-shadow)' : 'none',
+                                            }}
+                                        >
                                             <Icon size={20} className={item.status === 'active' ? 'text-white' : 'text-[var(--color-accent)]'} />
                                         </div>
 
                                         {/* Content */}
                                         <div className="glass-card flex-1 p-5 sm:p-6">
                                             <div className="text-xs sm:text-sm text-[var(--color-accent)] font-semibold tracking-wide uppercase mb-2">{item.date}</div>
-                                            <div className="text-base sm:text-lg font-medium text-[var(--color-text-primary)]">{item.event}</div>
+                                            <div className="text-base sm:text-lg font-medium" style={{ color: 'var(--color-text-heading)' }}>{item.event}</div>
                                         </div>
                                     </div>
                                 </ScrollReveal>
@@ -205,7 +202,7 @@ export default function Home() {
             </section>
 
             {/* ═══ Topics ═══ */}
-            <section className="section-padding" style={{ background: 'linear-gradient(180deg, var(--color-primary) 0%, #0d1235 100%)' }}>
+            <section className="section-padding" style={{ backgroundColor: 'var(--color-bg-alt)' }}>
                 <div className="container mx-auto">
                     <SectionHeading title="Conference Topics" subtitle="Explore the wide range of technical areas covered" />
 
@@ -215,10 +212,13 @@ export default function Home() {
                             return (
                                 <ScrollReveal key={topic.title} delay={i * 60}>
                                     <div className="glass-card p-6 flex items-start gap-4 group cursor-default h-full">
-                                        <div className="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-accent-2)]/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                        <div
+                                            className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                                            style={{ backgroundColor: 'var(--color-bg-accent-subtle)', border: '1px solid var(--color-border-accent)' }}
+                                        >
                                             <Icon size={22} className="text-[var(--color-accent)]" />
                                         </div>
-                                        <h3 className="text-sm sm:text-base font-medium text-[var(--color-text-primary)] leading-snug mt-1">{topic.title}</h3>
+                                        <h3 className="text-sm sm:text-base font-medium leading-snug mt-1" style={{ color: 'var(--color-text-heading)' }}>{topic.title}</h3>
                                     </div>
                                 </ScrollReveal>
                             );
@@ -234,16 +234,13 @@ export default function Home() {
             </section>
 
             {/* ═══ CTA Banner ═══ */}
-            <section className="section-padding bg-[var(--color-primary)] relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20"
-                    style={{ background: 'radial-gradient(ellipse 50% 80% at 50% 50%, rgba(124,58,237,0.3), transparent)' }}
-                />
+            <section className="section-padding relative overflow-hidden" style={{ backgroundColor: 'var(--color-bg)' }}>
                 <div className="container mx-auto relative z-10 text-center">
                     <ScrollReveal>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-[var(--font-heading)] gradient-text mb-8 leading-tight">
                             Ready to Share Your Research?
                         </h2>
-                        <p className="text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-10 text-base sm:text-lg text-center">
+                        <p className="max-w-2xl mx-auto mb-10 text-base sm:text-lg text-center" style={{ color: 'var(--color-text-body)' }}>
                             Submit your paper and join researchers from around the world at ICMSS 2026.
                             Accepted papers will be published in IEEE Xplore Digital Library.
                         </p>

@@ -18,11 +18,8 @@ export default function CallForPapers() {
     return (
         <div className="pt-24">
             {/* ═══ Header ═══ */}
-            <section className="section-padding relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20"
-                    style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(0,212,255,0.15), transparent)' }}
-                />
-                <div className="container mx-auto relative z-10">
+            <section className="section-padding" style={{ backgroundColor: 'var(--color-bg-alt)' }}>
+                <div className="container mx-auto">
                     <SectionHeading
                         title="Call for Papers"
                         subtitle={authorGuidelines.overview}
@@ -31,9 +28,10 @@ export default function CallForPapers() {
             </section>
 
             {/* ═══ Topics ═══ */}
-            <section className="section-padding bg-[var(--color-primary)]" style={{ paddingTop: 0 }}>
+            <section className="section-padding" style={{ backgroundColor: 'var(--color-bg)', paddingTop: 0 }}>
                 <div className="container mx-auto">
-                    <h3 className="text-2xl font-bold font-[var(--font-heading)] text-[var(--color-text-primary)] mb-16 text-center">Conference Topics</h3>
+                    <br></br>
+                    <h3 className="text-2xl font-bold font-[var(--font-heading)] mb-16 text-center" style={{ color: 'var(--color-text-heading)' }}>Conference Topics</h3>
                     <br></br>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                         {topics.map((topic, i) => {
@@ -41,10 +39,13 @@ export default function CallForPapers() {
                             return (
                                 <ScrollReveal key={topic.title} delay={i * 50}>
                                     <div className="glass-card p-5 flex items-center gap-4 h-full">
-                                        <div className="shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-accent-2)]/20 flex items-center justify-center">
+                                        <div
+                                            className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                                            style={{ backgroundColor: 'var(--color-bg-accent-subtle)', border: '1px solid var(--color-border-accent)' }}
+                                        >
                                             <Icon size={18} className="text-[var(--color-accent)]" />
                                         </div>
-                                        <span className="text-sm font-medium text-[var(--color-text-primary)]">{topic.title}</span>
+                                        <span className="text-sm font-medium" style={{ color: 'var(--color-text-heading)' }}>{topic.title}</span>
                                     </div>
                                 </ScrollReveal>
                             );
@@ -54,7 +55,7 @@ export default function CallForPapers() {
             </section>
 
             {/* ═══ Submission Guidelines ═══ */}
-            <section className="section-padding" style={{ background: 'linear-gradient(180deg, var(--color-primary) 0%, #0d1235 100%)' }}>
+            <section className="section-padding" style={{ backgroundColor: 'var(--color-bg-alt)' }}>
                 <div className="container mx-auto max-w-4xl">
                     <SectionHeading title="Submission Guidelines" />
 
@@ -63,15 +64,18 @@ export default function CallForPapers() {
                         <ScrollReveal>
                             <div className="glass-card p-6 sm:p-8">
                                 <div className="flex items-center gap-3 mb-5">
-                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-accent-2)]/20 flex items-center justify-center">
+                                    <div
+                                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                                        style={{ backgroundColor: 'var(--color-bg-accent-subtle)', border: '1px solid var(--color-border-accent)' }}
+                                    >
                                         <FileText size={20} className="text-[var(--color-accent)]" />
                                     </div>
-                                    <h4 className="text-lg font-semibold text-[var(--color-text-primary)]">Paper Format</h4>
+                                    <h4 className="text-lg font-semibold" style={{ color: 'var(--color-text-heading)' }}>Paper Format</h4>
                                 </div>
-                                <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4 text-justify">
+                                <p className="leading-relaxed mb-4 text-justify" style={{ color: 'var(--color-text-body)' }}>
                                     {authorGuidelines.submission}
                                 </p>
-                                <p className="text-[var(--color-text-secondary)] leading-relaxed mb-5 text-justify">
+                                <p className="leading-relaxed mb-5 text-justify" style={{ color: 'var(--color-text-body)' }}>
                                     Full papers should not exceed <span className="text-[var(--color-accent)] font-semibold">{authorGuidelines.maxPages} pages</span>.
                                 </p>
                                 <a
@@ -89,12 +93,15 @@ export default function CallForPapers() {
                         <ScrollReveal delay={100}>
                             <div className="glass-card p-6 sm:p-8">
                                 <div className="flex items-center gap-3 mb-5">
-                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-accent-2)]/20 flex items-center justify-center">
+                                    <div
+                                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                                        style={{ backgroundColor: 'var(--color-bg-accent-subtle)', border: '1px solid var(--color-border-accent)' }}
+                                    >
                                         <Upload size={20} className="text-[var(--color-accent)]" />
                                     </div>
-                                    <h4 className="text-lg font-semibold text-[var(--color-text-primary)]">Submission Process</h4>
+                                    <h4 className="text-lg font-semibold" style={{ color: 'var(--color-text-heading)' }}>Submission Process</h4>
                                 </div>
-                                <div className="text-[var(--color-text-secondary)] leading-relaxed space-y-4 text-justify">
+                                <div className="leading-relaxed space-y-4 text-justify" style={{ color: 'var(--color-text-body)' }}>
                                     <p>
                                         Authors are required to submit their full papers (maximum {authorGuidelines.maxPages} pages) through the
                                         <span className="text-[var(--color-accent)] font-medium"> Microsoft Conference Management Toolkit (CMT)</span>.
@@ -110,7 +117,7 @@ export default function CallForPapers() {
                                             Submit via CMT <ExternalLink size={16} />
                                         </a>
                                     ) : (
-                                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg glass text-sm text-[var(--color-gold)]">
+                                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium glass" style={{ color: 'var(--color-gold)' }}>
                                             CMT submission link will be updated soon
                                         </div>
                                     )}
@@ -122,12 +129,15 @@ export default function CallForPapers() {
                         <ScrollReveal delay={200}>
                             <div className="glass-card p-6 sm:p-8">
                                 <div className="flex items-center gap-3 mb-5">
-                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-accent-2)]/20 flex items-center justify-center">
+                                    <div
+                                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                                        style={{ backgroundColor: 'var(--color-bg-accent-subtle)', border: '1px solid var(--color-border-accent)' }}
+                                    >
                                         <BookOpen size={20} className="text-[var(--color-accent)]" />
                                     </div>
-                                    <h4 className="text-lg font-semibold text-[var(--color-text-primary)]">Important Notes</h4>
+                                    <h4 className="text-lg font-semibold" style={{ color: 'var(--color-text-heading)' }}>Important Notes</h4>
                                 </div>
-                                <ul className="text-[var(--color-text-secondary)] leading-relaxed space-y-4 list-none text-justify">
+                                <ul className="leading-relaxed space-y-4 list-none text-justify" style={{ color: 'var(--color-text-body)' }}>
                                     <li className="flex items-start gap-2">
                                         <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] shrink-0" />
                                         Papers must be submitted on the understanding that they have not been published elsewhere and are not currently under consideration by another conference.
@@ -152,12 +162,15 @@ export default function CallForPapers() {
                         <ScrollReveal delay={300}>
                             <div className="glass-card p-6 sm:p-8">
                                 <div className="flex items-center gap-3 mb-5">
-                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-accent-2)]/20 flex items-center justify-center">
+                                    <div
+                                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                                        style={{ backgroundColor: 'var(--color-bg-accent-subtle)', border: '1px solid var(--color-border-accent)' }}
+                                    >
                                         <ShieldCheck size={20} className="text-[var(--color-accent)]" />
                                     </div>
-                                    <h4 className="text-lg font-semibold text-[var(--color-text-primary)]">Peer Review & Publication</h4>
+                                    <h4 className="text-lg font-semibold" style={{ color: 'var(--color-text-heading)' }}>Peer Review & Publication</h4>
                                 </div>
-                                <p className="text-[var(--color-text-secondary)] leading-relaxed text-justify">
+                                <p className="leading-relaxed text-justify" style={{ color: 'var(--color-text-body)' }}>
                                     {authorGuidelines.peerReview}
                                 </p>
                             </div>
@@ -165,9 +178,10 @@ export default function CallForPapers() {
 
                         {/* CMT Acknowledgment */}
                         <ScrollReveal delay={400}>
-                            <div className="glass-card p-6 sm:p-8 border-[var(--color-border-accent)]">
+                            <div className="glass-card p-6 sm:p-8" style={{ borderColor: 'var(--color-border-accent)' }}>
                                 <h4 className="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider mb-4">CMT Acknowledgment</h4>
-                                <p className="text-[var(--color-text-muted)] text-sm leading-relaxed text-justify">
+                                <br></br>
+                                <p className="text-sm leading-relaxed text-justify" style={{ color: 'var(--color-text-muted)' }}>
                                     {authorGuidelines.cmtAcknowledgment}
                                 </p>
                             </div>
