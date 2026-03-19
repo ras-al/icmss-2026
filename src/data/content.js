@@ -8,6 +8,7 @@ import generalCoChair2 from '../assets/images/General Co-Chair & Organizing Secr
 import generalCoChair3 from '../assets/images/General Co-Chair & Organizing Secretary-3.png';
 import tpcChair from '../assets/images/TPC Chair.png';
 import tpcChair2 from '../assets/images/TPC Chair-2.png';
+import tpcCoChair from '../assets/images/TPC Co- Chair.png';
 import financeChair from '../assets/images/Finance Committee Chair .png';
 import publicityChair from '../assets/images/Publicity Chair .png';
 import publicityChair2 from '../assets/images/Publicity Chair-2.png';
@@ -113,6 +114,12 @@ export const committee = [
         members: [
             { name: "Dr. Varun P Gopi", designation: "Associate Professor, NIT Tiruchirapalli", image: tpcChair },
             { name: "Dr. J Dhoulath Beegum", designation: "Professor, TKMCE", image: tpcChair2 },
+        ],
+    },
+    {
+        role: "TPC Co-Chair",
+        members: [
+            { name: "Mr. Ganeshnath R", designation: "Assistant Professor, TKMCE", image: tpcCoChair },
         ],
     },
     {
