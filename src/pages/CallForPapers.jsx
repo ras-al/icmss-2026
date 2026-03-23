@@ -178,11 +178,10 @@ export default function CallForPapers() {
 
                         {/* CMT Acknowledgment */}
                         <ScrollReveal delay={400}>
-                            <div className="glass-card p-6 sm:p-8" style={{ borderColor: 'var(--color-border-accent)' }}>
-                                <h4 className="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider mb-4">CMT Acknowledgment</h4>
-                                <br></br>
-                                <p className="text-sm leading-relaxed text-justify" style={{ color: 'var(--color-text-muted)' }}>
-                                    {authorGuidelines.cmtAcknowledgment}
+                            <div className="bg-slate-100 border border-slate-300 p-6 rounded-xl mt-8">
+                                <h4 className="text-sm font-bold text-slate-700 uppercase tracking-wider mb-4">CMT Acknowledgment</h4>
+                                <p className="text-slate-600 text-sm leading-relaxed text-justify">
+                                    The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
                                 </p>
                             </div>
                         </ScrollReveal>
