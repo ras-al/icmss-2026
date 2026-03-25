@@ -74,7 +74,7 @@ export const authorGuidelines = {
     overview: `ICMSS 2026 aims to bring together researchers, academicians, and industry professionals from around the globe to share their latest research findings, exchange ideas, and discuss emerging trends in engineering systems and technologies.`,
     submission: `Technical papers describing original, previously unpublished research results—experimental or theoretical—are solicited in all relevant areas. Authors must format their papers using the official IEEE conference template.`,
     templateUrl: "https://www.ieee.org/conferences/publishing/templates",
-    cmtLink: "", // User will update
+    cmtLink: "https://cmt3.research.microsoft.com/TKMCEICMSS2026",
     maxPages: 6,
     peerReview: `All submissions will undergo a rigorous peer-review process led by an International Technical Program Committee. Accepted and presented papers will be submitted to IEEE Xplore Digital Library, ensuring wide visibility and impact for your research work. All submissions are processed through Crossref Similarity Check (iThenticate) to screen for plagiarism.`,
     cmtAcknowledgment: `The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.`,

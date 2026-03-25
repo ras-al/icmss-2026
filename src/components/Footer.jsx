@@ -36,6 +36,7 @@ export default function Footer() {
                     {/* Quick links */}
                     <div>
                         <h4 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--color-text-heading)' }}>Quick Links</h4>
+                        <br></br>
                         <ul className="space-y-2">
                             {navLinks.map((link) => (
                                 <li key={link.path}>
@@ -50,6 +51,7 @@ export default function Footer() {
                     {/* Contact */}
                     <div>
                         <h4 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--color-text-heading)' }}>Contact</h4>
+                        <br></br>
                         <ul className="space-y-3 text-sm" style={{ color: 'var(--color-text-muted)' }}>
                             <li className="flex items-start gap-2">
                                 <MapPin size={16} className="mt-0.5 text-[var(--color-accent)] shrink-0" />
@@ -65,6 +67,7 @@ export default function Footer() {
                     {/* IEEE */}
                     <div>
                         <h4 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--color-text-heading)' }}>Publication</h4>
+                        <br></br>
                         <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
                             Accepted and presented papers will be submitted to <span className="text-[var(--color-accent)] font-semibold">IEEE Xplore</span> Digital Library.
                         </p>
